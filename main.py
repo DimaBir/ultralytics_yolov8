@@ -5,7 +5,7 @@ if __name__ == '__main__':
     model = YOLO("yolov8n.yaml")  # build a new model from scratch
 
     # Train the model
-    results = model.train(data='VOC.yaml', epochs=3, imgsz=640, device='gpu')
+    results = model.train(data='VOC.yaml', epochs=3, imgsz=640, device='0')
 
     metrics = model.val()  # evaluate model performance on the validation set
     results = model("https://ultralytics.com/images/bus.jpg")  # predict on an image
