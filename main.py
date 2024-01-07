@@ -1,8 +1,11 @@
 from ultralytics import YOLO
 import torch
 
-# Set to your desired GPU number
-torch.cuda.set_device(0) 
+device = "0" if torch.cuda.is_available() else "cpu"
+
+if device == "0":
+    # Set to your desired GPU number
+    torch.cuda.set_device(0) 
 
 if __name__ == '__main__':
     # Load a model
